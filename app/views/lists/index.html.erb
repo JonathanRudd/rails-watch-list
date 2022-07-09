@@ -1,0 +1,16 @@
+<h1>listindex</h1>
+
+<div class="container">
+  <h1>Lists</h1>
+  <ul>
+    <% @lists.each do |list| %>
+      <li>
+        <%= link_to list.name, list_path(list) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to new_list_path do %>
+  <i class="fa fa-plus"></i> Add a new list
+<% end %>
