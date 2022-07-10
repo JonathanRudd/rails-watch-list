@@ -1,8 +1,11 @@
 <h1>newbookmark</h1>
-
-<%= simple_form_for [@list, @bookmark] do |f|%>
-  <%# # list for nesting%>
-  <%= f.input :comment %>
-  <%= f.input :movie_id, collection: @movies %>
-  <%= f.submit "submit", class: 'btn btn-primary' %>
-<%= end %>
+<div class="container">
+  <div class="row justify-content">
+    <%= simple_form_for [@list, @bookmark] do |f|%>
+      <%# # list for nesting%>
+      <%= f.input :comment %>
+      <%= f.input :movie_id, collection: Movies.all %>
+      <%= f.submit "submit", class: 'btn btn-primary' %>
+    <%= end %>
+  </div>
+</div>
