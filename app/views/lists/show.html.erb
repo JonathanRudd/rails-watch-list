@@ -1,7 +1,26 @@
-<%= @list.name %>
 
-<% @list.bookmarks.each do |bookmark|%>
-  <%= bookmark.comment %>
+<div class="position-relative">
+  <div class="card-category card-large text-center">
+    <h1><%= @list.name %></h1>
+  </div>
+    <span class="movie-tag"><%= pluralize(@list.movies.size, 'movie') %></span>
+</div>
+
+<span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></small></span>
+
+<% @list.movies.each do |movie|%>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+    <div class="movie-img h-100">
+      <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
+        <strong><%= movie.title %> <span class="text-muted font-weight-normal">• <%= movie.rating %> <i class="fas fa-star star-yellow"></i></span></strong>
+            <small class="text-muted"><%= movie.overview %></small>
+              <div>
+                <small class="test-strong"><%= bookmark.comment %></small>
+              </div>
+      <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %>
+    </div>
 <% end %>
 
 <%= link_to "create new bookmark", new_list_bookmark_path(@list) %>
+
+<%= link_to "See all lists", lists_path %>

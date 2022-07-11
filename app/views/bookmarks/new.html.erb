@@ -1,11 +1,10 @@
 <h1>newbookmark</h1>
 <div class="container">
   <div class="row justify-content">
-    <%= simple_form_for [@list, @bookmark] do |f|%>
-      <%# # list for nesting%>
-      <%= f.input :comment %>
-      <%= f.input :movie_id, collection: Movies.all %>
-      <%= f.submit "submit", class: 'btn btn-primary' %>
-    <%= end %>
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+          <%= f.association :movie, prompt: 'Select a movie'%>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
   </div>
 </div>
