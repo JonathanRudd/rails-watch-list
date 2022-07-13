@@ -12,9 +12,13 @@
   <ul>
     <% @lists.each do |list| %>
       <%= link_to list_path(list), class: "text-decoration-none" do %>
-        <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key  %>)">
+        <% if list.photo.attached?%>
+          <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+        <% else %>
+          <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
+        <% end %>
           <%= list.name %>
-          <%= cl_image_tag @list.photo %>
+          <%# <%= cl_image_tag @list.photo %>
           <%# <%= link_to "delete", list_path(@list), method: :delete %>
         <% end %>
         </div>
