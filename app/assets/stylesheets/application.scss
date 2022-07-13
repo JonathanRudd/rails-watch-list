@@ -10,3 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a {
+  color: #f9fafb;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: darkgray;
+}

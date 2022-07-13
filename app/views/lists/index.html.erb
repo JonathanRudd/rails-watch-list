@@ -17,7 +17,9 @@
         <% else %>
           <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
         <% end %>
-          <%= list.name %>
+          <div>
+            <%= list.name %>
+          </div>
           <%# <%= cl_image_tag @list.photo %>
           <%# <%= link_to "delete", list_path(@list), method: :delete %>
         <% end %>
@@ -27,5 +29,7 @@
 </div>
 
 <%= link_to new_list_path do %>
-  <i class="fa fa-plus"></i> Add a new list
+  <div class="text-center text-black">
+    <i class="fa fa-plus"></i> Add a new list
+  </div>
 <% end %>

@@ -2,8 +2,10 @@
 <div class="position-relative">
   <div class="card-category card-large text-center">
     <h1><%= @list.name %></h1>
+    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
   </div>
     <span class="movie-tag"><%= pluralize(@list.movies.size, 'movie') %></span>
+
 </div>
 
 <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></small></span>
