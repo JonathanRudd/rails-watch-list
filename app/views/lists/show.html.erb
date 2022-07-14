@@ -1,12 +1,15 @@
 
-<div class="position-relative">
-  <div class="card-category card-large text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
-    <h1><%= @list.name %></h1>
-      <%= cl_image_tag @list.photo.key, height: 300, crop: :fill %>
+<div class="container d-flex justify-content-center">
+  <div class="row align-items-center">
+    <div class="card-large text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
+      <h1 class="color:white"><%= @list.name %></h1>
+    </div>
   </div>
-    <span class="movie-tag"><%= pluralize(@list.movies.size, 'movie') %></span>
-
 </div>
+
+  <div class="container d-flex">
+    <span class="movie-tag d-flex align-items-center"><%= pluralize(@list.movies.size, 'movie') %></span>
+  </div>
 
 <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></small></span>
 
@@ -22,7 +25,7 @@
       <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %>
     </div>
 <% end %>
-<div class="btn btn-warning d-flex">
+<div class="btn btn-warning">
   <%= link_to "create new bookmark", new_list_bookmark_path(@list) %>
 </div>
 <div class="text-center text-black">
