@@ -22,7 +22,7 @@
       <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %>
     </div>
 <% end %>
-<div class="text-center color:black">
+<div class="btn btn-warning d-flex">
   <%= link_to "create new bookmark", new_list_bookmark_path(@list) %>
 </div>
 <div class="text-center text-black">

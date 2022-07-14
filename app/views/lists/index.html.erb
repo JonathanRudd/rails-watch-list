@@ -2,10 +2,17 @@
 
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-black">
-    <h1>Your Movie Lists:</h1>
+    <h1>Create a movie list and share it</h1>
+    <h1>with your friends</h1>
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
 </div>
+
+<%= link_to new_list_path do %>
+  <div class="text-center text-black">
+    <i class="btn btn-warning">+ Add list</i>
+  </div>
+<% end %>
 
 <div class="container">
   <h1>Lists</h1>
@@ -27,9 +34,3 @@
     <% end %>
   </ul>
 </div>
-
-<%= link_to new_list_path do %>
-  <div class="text-center text-black">
-    <i class="fa fa-plus"></i> Add a new list
-  </div>
-<% end %>
