@@ -17,11 +17,14 @@
 
 <%= link_to new_list_path do %>
   <div class="text-center text-black">
-    <i class="btn btn-warning">+ Add list</i>
+
+    <i class="btn btn-info">+ Add list</i>
   </div>
 <% end %>
 
   <div class="container text-center text-white">
+    <br>
+    <br>
     <h6>My Lists:</h6>
     <div class="cards">
       <% @lists.each do |list| %>
