@@ -16,10 +16,12 @@
   border: 1px solid rgb(230,230,230);
 }
 
-.cards {
+.grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 16px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .card-large {

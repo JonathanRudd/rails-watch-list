@@ -22,26 +22,29 @@
   </div>
 <% end %>
 
-  <div class="container text-center text-white">
+  <div class="text-center text-white">
     <br>
     <br>
     <h6>My Lists:</h6>
-    <div class="cards">
+    <div class="grid-container">
       <% @lists.each do |list| %>
         <%= link_to list_path(list), class: "text-decoration-none" do %>
           <% if list.photo.attached?%>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,28)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+            <%= list.name %>
+            </div>
           <% else %>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
-          <% end %>
-            <div>
-              <%= list.name %>
+            <%= list.name %>
             </div>
+          <% end %>
+        <% end %>
+
             <%# <%= cl_image_tag @list.photo %>
             <%# <%= link_to "delete", list_path(@list), method: :delete %>
-          <% end %>
-          </div>
       <% end %>
+    </div>
+
     </div>
   </div>
 </div>
