@@ -31,7 +31,11 @@
         <%= link_to list_path(list), class: "text-decoration-none" do %>
           <% if list.photo.attached?%>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,28)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
-            <%= list.name %>
+              <div class="column1"></div>
+              <div class="column2"></div>
+              <div id="bottom">
+                <%= list.name %>
+              </div>
             </div>
           <% else %>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">

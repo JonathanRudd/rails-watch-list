@@ -7,13 +7,30 @@
 }
 
 .card {
-  width: 150px;
-  height: 200px;
-  border-radius: 3px;
+  width: 275px;
+  height: 450px;
+  border-radius: 8px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 20px;
-  border: 1px solid rgb(230,230,230);
+  // border: 1px solid rgb(230,230,230);
+}
+
+.column1 {
+  color: #4287f5;
+  text-align: center;
+}
+
+.column2 {
+  text-align: center;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 0;
+  left: 1;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .grid-container {
