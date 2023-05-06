@@ -1,14 +1,11 @@
 <div class="homepagebackground" style="padding-right: 0px; padding-left: 0px;">
   <div class="background" style="background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url(<%= asset_path('moviepeople.jpg') %>)">
+  <div class="background-gradient"></div>
+
 
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-white">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="spacer"></div>
     <h1>Create a movie list and share it</h1>
     <h1>with your friends</h1>
     <h3 class="typed-js" data-controller="typed-js"></h3>
@@ -40,6 +37,7 @@
           <% else %>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
             <%= list.name %>
+            <br>
             </div>
           <% end %>
         <% end %>

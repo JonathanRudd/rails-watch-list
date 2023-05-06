@@ -1,9 +1,33 @@
 // Specific CSS for your home-page
 
+.homepagebackground {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.background-gradient {
+  background: linear-gradient(0deg, #000 30%, rgba(0, 0, 0, 0.5) 100%);
+  height: 205vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
 .movie-img {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+
   object-position: center;
 }
 
@@ -12,4 +36,30 @@
   max-height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+// small screens
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+
+// big screens
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .spacer {
+    height: 390px;
+  }
+
+
+
+
+
+
 }
