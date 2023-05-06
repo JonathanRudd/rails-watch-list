@@ -2,11 +2,13 @@
   <div class="background" style="background-image: linear-gradient(1deg,#212529, rgba(0,0,0,0.1)), url(<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>)">
   <div class="background-gradient"></div>
 
+  <div class="spacer" style="height: 300px"></div>
+
   <div class="text-center text-white" style="position: relative; z-index: 1;">
     <h2><%= @list.name %></h2>
   </div>
 
-  <div class="container d-flex" style="position: relative; z-index: 1;">
+  <div class="container d-flex text-white" style="position: relative; z-index: 1;">
     <span class="movie-tag d-flex align-items-center"><%= pluralize(@list.movies.size, 'movie') %></span>
   </div>
 
@@ -29,7 +31,7 @@
     <% end %>
   </div>
 
-  <div class="btn btn-warning" style="position: relative; z-index: 1;">
+  <div class="btn btn-warning" style="position: relative; z-index: 1; margin: 50px">
     <%= link_to "create new bookmark", new_list_bookmark_path(@list) %>
   </div>
   <div class="text-center text-black" style="position: relative; z-index: 1;">
