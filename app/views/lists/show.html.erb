@@ -2,42 +2,39 @@
   <div class="background" style="background-image: linear-gradient(1deg,#212529, rgba(0,0,0,0.1)), url(<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>)">
   <div class="background-gradient"></div>
 
-    <div class="text-center text-white">
-      <h2><%= @list.name %></h2>
-    </div>
-
-    <div class="container d-flex">
-      <span class="movie-tag d-flex align-items-center"><%= pluralize(@list.movies.size, 'movie') %></span>
-    </div>
-
-  <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></small></span>
-
-  <div class="grid-container">
-        <% @list.movies.each do |movie|%>
-          <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-              <div class="movie-card">
-                    <div class="movie-img h-100">
-                      <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
-                        <strong><%= movie.title %> <span class="text-muted font-weight-normal">• <%= movie.rating %> <i class="fas fa-star star-yellow"></i></span></strong>
-                            <small class="text-muted"><%= movie.overview %></small>
-                              <div>
-                                <small class="test-strong"><%= bookmark.comment %></small>
-                              </div>
-                      <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %>
-                    </div>
-              </div>
-        <% end %>
+  <div class="text-center text-white" style="position: relative; z-index: 1;">
+    <h2><%= @list.name %></h2>
   </div>
 
+  <div class="container d-flex" style="position: relative; z-index: 1;">
+    <span class="movie-tag d-flex align-items-center"><%= pluralize(@list.movies.size, 'movie') %></span>
+  </div>
 
+  <span class="mb-2 d-block" style="position: relative; z-index: 1;\"><small><em class="text-muted\"><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></small></span>
 
-  <%#  %>
+  <div class="grid-container" style="position: relative; z-index: 1;">
+    <% @list.movies.each do |movie|%>
+      <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+      <div class="movie-card">
+        <div class="movie-img h-100">
+          <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
+          <strong><%= movie.title %> <span class="text-muted font-weight-normal">• <%= movie.rating %> <i class="fas fa-star star-yellow"></i></span></strong>
+          <small class="text-muted"><%= movie.overview %></small>
+          <div>
+            <small class="test-strong\"><%= bookmark.comment %></small>
+          </div>
+          <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-  <div class="btn btn-warning">
+  <div class="btn btn-warning" style="position: relative; z-index: 1;">
     <%= link_to "create new bookmark", new_list_bookmark_path(@list) %>
   </div>
-  <div class="text-center text-black">
+  <div class="text-center text-black" style="position: relative; z-index: 1;">
     <%= link_to "See all lists", lists_path %>
   </div>
+
 
 </div>
