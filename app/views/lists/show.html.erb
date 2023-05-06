@@ -13,6 +13,26 @@
 
 <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></small></span>
 
+<div class="grid-container">
+      <% @list.movies.each do |movie|%>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+
+
+
+            <div class="card" style="background-image: url('<%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>')">
+              <div class="column1"></div>
+              <div class="column2"></div>
+              <div id="bottom">
+                <%= movie.title %>
+              </div>
+            </div>
+
+
+      <% end %>
+</div>
+
+
+
 <% @list.movies.each do |movie|%>
   <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
     <div class="movie-img h-100">
